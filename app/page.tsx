@@ -1,7 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import VisitorMap from './components/VisitorMap';
+import dynamic from 'next/dynamic';
+
+const VisitorMap = dynamic(() => import('./components/VisitorMap'), {
+  ssr: false,
+  loading: () => <div className="h-96 w-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center">Loading map...</div>,
+});
 
 interface VisitRecord {
   ip: string;
