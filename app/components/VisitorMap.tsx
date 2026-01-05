@@ -146,7 +146,7 @@ export default function VisitorMap({
   // Don't render map until client-side
   if (!isMounted) {
     return (
-      <div className="h-96 w-full rounded-lg overflow-hidden border border-white/20 flex items-center justify-center bg-zinc-900">
+      <div className="aspect-video w-full rounded-lg overflow-hidden border border-white/20 flex items-center justify-center bg-zinc-900">
         <div className="flex flex-col items-center gap-3">
           <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-sm font-medium text-white/80">Loading map...</p>
@@ -156,7 +156,7 @@ export default function VisitorMap({
   }
 
   return (
-    <div className="h-96 w-full rounded-lg overflow-hidden border border-white/20">
+    <div className="aspect-video w-full rounded-lg overflow-hidden border border-white/20">
       <MapContainer
         center={[20, 0]}
         zoom={2}
