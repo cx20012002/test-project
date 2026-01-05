@@ -47,7 +47,7 @@ const countryCoordinates: Record<string, [number, number]> = {
   PH: [12.8797, 121.7740], // Philippines
   VN: [14.0583, 108.2772], // Vietnam
   KR: [35.9078, 127.7669], // South Korea
-  NZ: [40.9006, 174.8860], // New Zealand
+  NZ: [-40.9006, 174.8860], // New Zealand
   IE: [53.4129, -8.2439], // Ireland
   PT: [39.3999, -8.2245], // Portugal
   GR: [39.0742, 21.8243], // Greece
@@ -66,6 +66,7 @@ interface VisitorMapProps {
 export default function VisitorMap({ records }: VisitorMapProps) {
   useEffect(() => {
     // Fix for default marker icons in Next.js (client-side only)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     delete (L.Icon.Default.prototype as any)._getIconUrl;
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
